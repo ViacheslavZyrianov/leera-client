@@ -1,0 +1,26 @@
+{
+  "general": {
+    "select": "Обрати"
+  },
+  "headerBar": {
+    "home": "Головна",
+    "stories": "Історії",
+    "settings": "Налаштування",
+    "search": "Пошук"
+  },
+  "stories": {
+    "read": "Читати"
+  },
+  "settings": {
+    "palette": {
+      "label": "Палетка",
+      "list": {
+        "default": "За замовчуванням",
+        "wildParrot": "Дикий папуга",
+        "witch": "Відьма",
+        "cyber": "Кібер",
+        "flowers": "Квіти"
+      }
+    }
+  }
+}

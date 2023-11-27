@@ -1,0 +1,26 @@
+{
+  "general": {
+    "select": "Select"
+  },
+  "headerBar": {
+    "home": "Home",
+    "stories": "Stories",
+    "settings": "Settings",
+    "search": "Search"
+  },
+  "stories": {
+    "read": "Read"
+  },
+  "settings": {
+    "palette": {
+      "label": "Palette",
+      "list": {
+        "default": "Default",
+        "wildParrot": "Wild parrot",
+        "witch": "Witch",
+        "cyber": "Cyber",
+        "flowers": "Flowers"
+      }
+    }
+  }
+}
