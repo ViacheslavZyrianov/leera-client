@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import sFetch from '@/composables/sfetch'
+import sFetch from '@/composables/sFetch'
 import { type StoryInterface } from '@/interfaces/story'
 import { type Ref } from 'vue'
 
