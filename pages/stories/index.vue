@@ -24,7 +24,6 @@ const stories: any = await storiesStore.getAllStories()
         variant="tonal"
         color="primary"
         nuxt
-        rounded
         :to="localePath(`/stories/${story.id}`)"
     >
       {{ $t('stories.read') }}

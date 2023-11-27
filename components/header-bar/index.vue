@@ -14,7 +14,6 @@ const localePath = useLocalePath()
           class="mr-4"
           variant="text"
           color="primary"
-          rounded
           :prepend-icon="icon"
       >
         {{ $t(`headerBar.${label}`) }}
@@ -22,13 +21,7 @@ const localePath = useLocalePath()
       <v-spacer></v-spacer>
       <theme-switcher />
       <language-switcher />
-      <v-btn
-          color="primary"
-          variant="elevated"
-          rounded
-      >
-        $t(Auth)
-      </v-btn>
+      <header-bar-auth />
 <!--      <v-text-field-->
 <!--          density="compact"-->
 <!--          flat-->

@@ -48,7 +48,6 @@ setPalette(theme)
                 variant="text"
                 color="primary"
                 class="ml-4"
-                rounded
                 :active="paletteKey === cookie_palette"
                 @click="onPaletteSelect(paletteKey)"
             >

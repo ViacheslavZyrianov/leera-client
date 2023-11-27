@@ -19,7 +19,6 @@ function onLocaleSelect(locale) {
     hide-details
     width="200"
     class="mr-2"
-    rounded
     @update:model-value="onLocaleSelect"
   />
 </template>
