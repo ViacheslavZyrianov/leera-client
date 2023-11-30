@@ -1,6 +1,6 @@
 export interface User {
     username: string
-    avatar: string | null
+    avatar?: string
     isPremium: boolean
     uuid: string
 }
