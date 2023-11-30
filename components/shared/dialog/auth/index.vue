@@ -32,7 +32,7 @@ function onSuccessfulLogin() {
     <v-card>
       <v-tabs
         v-model="tab"
-        grow
+        :grow="true"
       >
         <v-tab value="login">{{ $t('auth.login.label') }}</v-tab>
         <v-tab value="registration">{{ $t('auth.registration.label') }}</v-tab>

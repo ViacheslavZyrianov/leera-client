@@ -23,6 +23,7 @@ export const useUserStore = defineStore('user', {
         async getUserMe() {
             const { data } = await requestor<UserMe>(`/user/me`)
             this.me = data
+            this.me.avatar = null
             this.isLoggedIn = true
         },
         async getUser(uuid: string) {

@@ -1,8 +1,6 @@
 import type { OptionsInterface } from '@/interfaces/requestor'
 import { type FetchContext, type FetchResponse } from 'ofetch'
 import { type R } from 'vite-node/types-516036fa'
-import type {AsyncDataOptions} from "#app";
-import {FetchError} from "ofetch/dist/node";
 
 const headers = (defaultHeaders: object | undefined): HeadersInit | undefined => {
     const headers = {}

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import { storeToRefs } from 'pinia'
 import { useUserStore } from '@/stores/user'
 
 const userStore = useUserStore()
@@ -8,6 +7,7 @@ const { $event } = useNuxtApp()
 const menuBtnChevron = ref('mdi-chevron-down')
 
 const avatar = computed(() => userStore.me.avatar)
+const avatarInitials = computed(() => userStore.me.username[0])
 
 function openAuthDialog() {
   $event('dialog:open', 'auth')
@@ -35,10 +35,20 @@ function onLogout() {
           :append-icon="menuBtnChevron"
       >
         <v-avatar
+          v-if="avatar"
           :image="avatar"
+          color="primary"
           size="24"
           class="mr-2"
         />
+        <v-avatar
+          v-else
+          color="primary"
+          size="24"
+          class="mr-2"
+        >
+          {{ avatarInitials }}
+        </v-avatar>
         <div class="username">{{ userStore.me.username }}</div>
       </v-btn>
     </template>

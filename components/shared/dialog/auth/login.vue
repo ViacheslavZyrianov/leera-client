@@ -79,7 +79,7 @@ async function onSubmit() {
       type="submit"
       :loading="isLoading"
       :disabled="isDisabled"
-      block
+      :block="true"
       color="primary"
     >
       {{ $t('auth.login.label') }}
