@@ -1,8 +1,11 @@
 <script setup lang="ts">
+
 </script>
 
 <template>
-  <h1>homepage</h1>
+  <v-card class="pa-4">
+    registration
+  </v-card>
 </template>
 
 <style scoped>

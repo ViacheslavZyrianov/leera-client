@@ -1,6 +1,25 @@
 {
   "general": {
-    "select": "Select"
+    "select": "Select",
+    "submit": "Submit",
+    "save": "Save"
+  },
+  "auth": {
+    "label": "Authorization",
+    "login": {
+      "label": "Login",
+      "username": {
+        "label": "Username",
+        "placeholder": "Username"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Password"
+      }
+    },
+    "registration": {
+      "label": "Registration"
+    }
   },
   "headerBar": {
     "home": "Home",

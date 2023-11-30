@@ -1,6 +1,25 @@
 {
   "general": {
-    "select": "Обрати"
+    "select": "Обрати",
+    "submit": "Підтвердити",
+    "save": "Зберегти"
+  },
+  "auth": {
+    "label": "Авторизація",
+    "login": {
+      "label": "Логін",
+      "username": {
+        "label": "Юзернейм",
+        "placeholder": "Юзернейм"
+      },
+      "password": {
+        "label": "Пароль",
+        "placeholder": "Пароль"
+      }
+    },
+    "registration": {
+      "label": "Реєстрація"
+    }
   },
   "headerBar": {
     "home": "Головна",

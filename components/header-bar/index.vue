@@ -18,19 +18,10 @@ const localePath = useLocalePath()
       >
         {{ $t(`headerBar.${label}`) }}
       </v-btn>
-      <v-spacer></v-spacer>
+      <v-spacer />
       <theme-switcher />
-      <language-switcher />
+      <language-switcher class="mr-4" />
       <header-bar-auth />
-<!--      <v-text-field-->
-<!--          density="compact"-->
-<!--          flat-->
-<!--          hide-details-->
-<!--          label="Search"-->
-<!--          rounded="lg"-->
-<!--          single-line-->
-<!--          variant="solo-filled"-->
-<!--      ></v-text-field>-->
     </v-container>
   </v-app-bar>
 </template>

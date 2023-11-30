@@ -3,6 +3,7 @@ import i18n from './i18n/index'
 
 export default [
     '@pinia/nuxt',
+    'dayjs-nuxt',
     [
         '@nuxtjs/i18n',
         i18n
@@ -11,5 +12,6 @@ export default [
         nuxt.hooks.hook('vite:extendConfig', (config) => {
             config.plugins.push(vuetify({ autoImport: true }))
         })
-    }
+    },
+    '@vee-validate/nuxt'
 ]
