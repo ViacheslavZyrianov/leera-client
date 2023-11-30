@@ -3,12 +3,12 @@ export default {
         css: {
             preprocessorOptions: {
                 scss: {
-                    additionalData: '@use "@/assets/variables.scss" as *;',
+                    additionalData: '@use "@/assets/styles/variables.scss" as *;',
                 }
             }
         }
     },
     css: [
-        '@/assets/global.scss'
+        '@/assets/styles/global.scss'
     ]
 }

@@ -8,10 +8,5 @@ export default [
         to: '/stories',
         label: 'stories',
         icon: 'mdi-format-list-text'
-    },
-    {
-        to: '/settings',
-        label: 'settings',
-        icon: 'mdi-cog'
     }
 ]
