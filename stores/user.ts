@@ -10,7 +10,8 @@ export const useUserStore = defineStore('user', {
             isPremium: false,
             uuid: '',
             isEmailApproved: false,
-            email: ''
+            email: '',
+            createdAt: ''
         }
         const isLoggedIn: boolean = false
 
@@ -35,7 +36,8 @@ export const useUserStore = defineStore('user', {
                 isPremium: false,
                 uuid: '',
                 isEmailApproved: false,
-                email: ''
+                email: '',
+                createdAt: ''
             }
         },
         logout() {

@@ -35,7 +35,7 @@ function onLocaleSelect(locale) {
         @click="onLocaleSelect(localeItem.code)"
       >
         <v-list-item-title
-          class="text-button text-lowercase"
+          class="text-button"
         >
           {{ localeItem.name }}
         </v-list-item-title>

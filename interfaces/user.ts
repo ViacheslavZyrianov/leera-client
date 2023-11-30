@@ -3,6 +3,7 @@ export interface User {
     avatar?: string
     isPremium: boolean
     uuid: string
+    createdAt: string
 }
 
 export interface UserMe extends User {

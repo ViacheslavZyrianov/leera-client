@@ -13,7 +13,7 @@ const localePath = useLocalePath()
           v-for="{ to, label } in links"
           nuxt
           :to="localePath(to)"
-          class="mr-4 text-lowercase"
+          class="mr-4"
           variant="text"
       >
         {{ $t(`headerBar.${label}`) }}

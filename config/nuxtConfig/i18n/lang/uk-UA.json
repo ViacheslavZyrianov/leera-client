@@ -27,19 +27,26 @@
     "settings": "Налаштування",
     "search": "Пошук"
   },
-  "stories": {
-    "read": "Читати"
-  },
-  "settings": {
-    "palette": {
-      "label": "Палетка",
+  "profile": {
+    "label": "Профіль",
+    "settings": {
+      "label": "Налаштування",
       "list": {
-        "default": "За замовчуванням",
-        "wildParrot": "Дикий папуга",
-        "witch": "Відьма",
-        "cyber": "Кібер",
-        "flowers": "Квіти"
+        "palette": {
+          "label": "Палетка",
+          "list": {
+            "default": "За замовчуванням",
+            "wildParrot": "Дикий папуга",
+            "witch": "Відьма",
+            "cyber": "Кібер",
+            "flowers": "Квіти"
+          }
+        },
+        "logout": "Вийти"
       }
     }
+  },
+  "stories": {
+    "read": "Читати"
   }
 }

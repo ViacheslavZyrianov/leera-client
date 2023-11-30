@@ -7,6 +7,10 @@ defineProps({
   placeholder: {
     type: String,
     default: ''
+  },
+  size: {
+    type: Number,
+    default: 24
   }
 })
 </script>
@@ -14,8 +18,8 @@ defineProps({
 <template>
   <v-avatar
     :image="avatarUrl"
+    :size="size"
     color="primary"
-    size="24"
     class="mr-2"
   >
     {{ placeholder }}
