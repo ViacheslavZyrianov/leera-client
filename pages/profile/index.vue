@@ -23,7 +23,7 @@ try {
 </script>
 
 <template>
-  <NuxtLayout name="left-aside-right-content">
+  <NuxtLayout name="profile">
     <div
       v-if="isUserDataLoaded"
       class="d-flex"
