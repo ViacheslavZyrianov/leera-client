@@ -19,7 +19,7 @@ function openAuthDialog() {
     elevation="0"
     variant="text"
     class="text-body-2"
-    :to="localePath('/user/me')"
+    :to="localePath('/profile')"
   >
     <shared-avatar
       :avatar-url="avatar"
