@@ -58,18 +58,14 @@ async function onSubmit() {
   >
     <v-text-field
       v-model="username"
-      :label="$t('auth.login.username.label')"
+      variant="outlined"
       :placeholder="$t('auth.login.username.placeholder')"
-      variant="solo-filled"
-      density="compact"
       prepend-inner-icon="mdi-account"
     />
     <v-text-field
       v-model="password"
-      :label="$t('auth.login.password.label')"
+      variant="outlined"
       :placeholder="$t('auth.login.password.placeholder')"
-      variant="solo-filled"
-      density="compact"
       prepend-inner-icon="mdi-key"
       :append-inner-icon="passwordFieldAppendedInnerIcon"
       :type="passwordFieldType"

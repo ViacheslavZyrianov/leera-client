@@ -9,12 +9,12 @@
     "login": {
       "label": "Login",
       "username": {
-        "label": "Username",
-        "placeholder": "Username"
+        "label": "username",
+        "placeholder": "username"
       },
       "password": {
-        "label": "Password",
-        "placeholder": "Password"
+        "label": "password",
+        "placeholder": "password"
       }
     },
     "registration": {

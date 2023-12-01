@@ -30,8 +30,8 @@ function openAuthDialog() {
   </v-btn>
   <v-btn
     v-else
+    variant="outlined"
     color="primary"
-    variant="elevated"
     @click="openAuthDialog"
   >
     {{ $t('auth.label') }}
