@@ -15,8 +15,13 @@ export default defineNuxtPlugin((app) => {
             },
             VCard: {
                 variant: 'outlined'
+            },
+            VDialog: {
+                VCard: {
+                    variant: 'elevated'
+                }
             }
-        },
+        }
     })
     app.vueApp.use(vuetify)
 })
