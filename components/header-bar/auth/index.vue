@@ -6,7 +6,7 @@ const localePath = useLocalePath()
 const { $event } = useNuxtApp()
 
 const avatar = computed(() => userStore.me?.avatar)
-const avatarInitials = computed(() => userStore.me.username[0])
+const avatarInitials = computed(() => userStore.me?.username[0])
 
 function openAuthDialog() {
   $event('dialog:open', 'auth')
