@@ -6,7 +6,7 @@ const storiesStore = useStoriesStore()
 const story = await storiesStore.getStoryById(route.params.id)
 
 useHead({
-  title: story.value.title
+  title: story.title
 })
 </script>
 
