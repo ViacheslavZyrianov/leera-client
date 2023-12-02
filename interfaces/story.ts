@@ -1,3 +1,7 @@
+interface GenreInterface {
+    title: string
+}
+
 export interface StoryInterface {
     id: number
     title: string
@@ -8,8 +12,7 @@ export interface StoryInterface {
     price: number
     createdAt: string
     updatedAt: string
-    userId: number
-    genreId: number
+    genre: GenreInterface
 }
 
 export interface StoriesInterface {
