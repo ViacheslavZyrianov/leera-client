@@ -15,7 +15,7 @@ setPalette(theme)
 </script>
 
 <template>
-  <NuxtLayout name="left-aside-right-content">
+  <NuxtLayout name="profile">
     <v-card>
       <v-list class="pa-0">
         <v-list-item>
