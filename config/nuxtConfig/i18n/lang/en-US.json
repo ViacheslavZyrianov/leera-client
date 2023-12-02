@@ -28,6 +28,9 @@
   },
   "profile": {
     "label": "Profile",
+    "stories": {
+      "label": "Stories"
+    },
     "settings": {
       "label": "Settings",
       "list": {
@@ -46,6 +49,12 @@
     }
   },
   "stories": {
-    "read": "Read"
+    "read": "Read",
+    "free": "Free"
+  },
+  "errors": {
+    "required": "Field {field} is required",
+    "minLength": "Minimum {min} characters in field {field}",
+    "maxLength": "Maximum {max} characters in field {field}"
   }
 }

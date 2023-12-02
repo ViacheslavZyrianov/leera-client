@@ -29,6 +29,9 @@
   },
   "profile": {
     "label": "Профіль",
+    "stories": {
+      "label": "Історії"
+    },
     "settings": {
       "label": "Налаштування",
       "list": {
@@ -47,6 +50,12 @@
     }
   },
   "stories": {
-    "read": "Читати"
+    "read": "Читати",
+    "free": "Безкоштовно"
+  },
+  "errors": {
+    "required": "Поле {field} обовʼязкове",
+    "minLength": "Мінімум {min} літер в полі {field}",
+    "maxLength": "Maximum {max} літер в полі {field}"
   }
 }
