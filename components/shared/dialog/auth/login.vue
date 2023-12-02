@@ -1,16 +1,43 @@
 <script setup lang="ts">
 import { useAuthStore } from '@/stores/auth'
 import { useUserStore } from '@/stores/user'
+import { useVuelidate } from '@vuelidate/core'
+import { required, minLength, maxLength } from '@vuelidate/validators'
+import generateFieldErrorMessages from '@/composables/generateFieldErrorMessages'
+
+const { t } = useI18n()
 const authStore = useAuthStore()
 const userStore = useUserStore()
 
-const username = ref('')
-const password = ref('')
-const isLoading = ref(false)
+const emit = defineEmits(['onSuccessfulLogin'])
+
 const isDisabled = ref(false)
+const isLoading = ref(false)
 const isPasswordFieldValueVisible = ref(false)
 
-const emit = defineEmits(['onSuccessfulLogin'])
+const form = reactive({
+  username: '',
+  password: ''
+})
+
+const rules = {
+  username: {
+    required,
+    minLength: minLength(3),
+    maxLength: maxLength(30)
+  },
+  password: {
+    required,
+    minLength: minLength(6),
+    maxLength: maxLength(30)
+  }
+}
+
+const $v = useVuelidate(rules, form)
+
+watch(() => $v.value.$error, value => {
+  isDisabled.value = value
+})
 
 const passwordFieldAppendedInnerIcon = computed(() => {
   return isPasswordFieldValueVisible.value ? 'mdi-eye-off' : 'mdi-eye'
@@ -20,13 +47,17 @@ const passwordFieldType = computed(() => {
   return isPasswordFieldValueVisible.value ? 'text' : 'password'
 })
 
+const submitButtonColor = computed(() => {
+  if (isDisabled.value) return 'primary'
+})
+
 function onPasswordFieldAppendedInnerIconClick() {
   isPasswordFieldValueVisible.value = !isPasswordFieldValueVisible.value
 }
 
 async function postLoginUser() {
   try {
-    await authStore.postLogin(username.value, password.value)
+    await authStore.postLogin(form.username, form.password)
   } catch (err: any) {
     console.log('onSubmit login error', err.message);
   }
@@ -41,6 +72,8 @@ async function getUserMe() {
 }
 
 async function onSubmit() {
+  await $v.value.$validate()
+  if ($v.value.$error) return
   isLoading.value = true
   isDisabled.value = true
   await postLoginUser()
@@ -57,18 +90,22 @@ async function onSubmit() {
     @submit.prevent="onSubmit"
   >
     <v-text-field
-      v-model="username"
+      v-model="form.username"
+      :error-messages="generateFieldErrorMessages($v, 'username')"
       variant="outlined"
       :placeholder="$t('auth.login.username.placeholder')"
       prepend-inner-icon="mdi-account"
+      class="mb-2"
     />
     <v-text-field
-      v-model="password"
+      v-model="form.password"
       variant="outlined"
+      :error-messages="generateFieldErrorMessages($v, 'password')"
       :placeholder="$t('auth.login.password.placeholder')"
       prepend-inner-icon="mdi-key"
       :append-inner-icon="passwordFieldAppendedInnerIcon"
       :type="passwordFieldType"
+      class="mb-2"
       @click:append-inner="onPasswordFieldAppendedInnerIconClick"
     />
     <v-btn
@@ -76,7 +113,7 @@ async function onSubmit() {
       :loading="isLoading"
       :disabled="isDisabled"
       :block="true"
-      color="primary"
+      :color="submitButtonColor"
     >
       {{ $t('auth.login.label') }}
     </v-btn>
