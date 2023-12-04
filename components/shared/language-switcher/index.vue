@@ -18,7 +18,6 @@ function onLocaleSelect(locale) {
       <v-btn
         size="default"
         variant="outlined"
-        class="text-lowercase"
         v-bind="props"
       >
         {{ locale }}

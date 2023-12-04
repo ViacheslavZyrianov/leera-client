@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+.v-application {
+  background-color: #F3F4F8 !important;
+  color: #1f1f1f;
+}
+
 @for $i from 1 through 6 {
   h#{$i} {
     font-family: 'Yeseva One', sans-serif;

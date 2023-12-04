@@ -8,6 +8,8 @@ import generateFieldErrorMessages from '@/composables/generateFieldErrorMessages
 const { $event } = useNuxtApp()
 const authStore = useAuthStore()
 const userStore = useUserStore()
+const router = useRouter()
+const localePath = useLocalePath()
 
 const emit = defineEmits(['onSuccessfulLogin'])
 
@@ -78,9 +80,9 @@ async function onSubmit() {
   isDisabled.value = true
   await postLoginUser()
   await getUserMe()
-  $event('dialog:close', 'auth')
   isLoading.value = false
   isDisabled.value = false
+  router.push(localePath('/profile'))
 }
 </script>
 
@@ -92,14 +94,18 @@ async function onSubmit() {
     <v-text-field
       v-model="form.username"
       :error-messages="generateFieldErrorMessages($v, 'login-username')"
-      variant="outlined"
+      variant="solo-filled"
+      density="compact"
+      :flat="true"
       :placeholder="$t('auth.login.username.placeholder')"
       prepend-inner-icon="mdi-account"
       class="mb-2"
     />
     <v-text-field
       v-model="form.password"
-      variant="outlined"
+      variant="solo-filled"
+      density="compact"
+      :flat="true"
       :error-messages="generateFieldErrorMessages($v, 'login-password')"
       :placeholder="$t('auth.login.password.placeholder')"
       prepend-inner-icon="mdi-key"
@@ -113,6 +119,7 @@ async function onSubmit() {
       :loading="isLoading"
       :disabled="isDisabled"
       :block="true"
+      :flat="true"
       :color="submitButtonColor"
     >
       {{ $t('auth.login.label') }}

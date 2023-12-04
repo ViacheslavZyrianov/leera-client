@@ -4,7 +4,7 @@ const isVisible = ref(false)
 const dialogName = ref('')
 
 const dialogs = {
-  auth: resolveComponent('shared-dialog-auth')
+  // auth: resolveComponent('shared-dialog-auth')
 }
 
 $listen('dialog:open', (name: any) => {

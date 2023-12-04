@@ -6,20 +6,12 @@ export default defineNuxtPlugin((app) => {
     const vuetify = createVuetify({
         ssr: true,
         defaults: {
-            VApp: {
-                class: 'text-lowercase'
-            },
             VBtn: {
-                variant: 'outlined',
+                // variant: 'outlined',
                 class: 'text-lowercase'
             },
             VCard: {
-                variant: 'outlined'
-            },
-            VDialog: {
-                VCard: {
-                    variant: 'elevated'
-                }
+                elevation: "8"
             }
         }
     })

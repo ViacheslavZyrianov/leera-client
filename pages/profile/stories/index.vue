@@ -15,7 +15,6 @@ function storyPrice(price: number) {
   <v-card
     v-for="story in stories"
     :key="story.id"
-    variant="outlined"
     class="pa-4 mb-8"
   >
     <div class="d-flex mb-4">
@@ -34,7 +33,7 @@ function storyPrice(price: number) {
           :width="300"
           aspect-ratio="9/16"
           class="w-25 h-100 mr-4"
-          cover
+          :cover="true"
           :src="story.imageUrl"
       />
       <div class="w-75">

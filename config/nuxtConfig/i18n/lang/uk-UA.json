@@ -71,6 +71,9 @@
     "edit": "Редагувати",
     "free": "Безкоштовно"
   },
+  "search": {
+    "placeholder": "Шукати історію..."
+  },
   "errors": {
     "required": "Поле {field} обовʼязкове",
     "minLength": "Мінімум {min} літер в полі {field}",

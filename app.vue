@@ -5,6 +5,7 @@ import { useUserStore } from '@/stores/user'
 import checkIsLoggedIn from '@/composables/checkIsLoggedIn'
 
 const userStore = useUserStore()
+const route = useRoute()
 
 const cookie_theme = useCookie('theme')
 const theme = useTheme()
@@ -17,6 +18,10 @@ const cookie_locale = useCookie('i18n_redirected')
 const { defaultLocale } = useI18n()
 dayjs.locale(cookie_locale.value || defaultLocale)
 
+const centeredPages = ['/auth']
+
+const classes = computed(() => centeredPages.includes(route.path) ? 'fill-height justify-center' : null)
+
 if (checkIsLoggedIn()) {
   await userStore.getUserMe()
 }
@@ -26,7 +31,7 @@ if (checkIsLoggedIn()) {
   <v-app>
     <header-bar />
     <v-main>
-      <v-container>
+      <v-container :class="classes">
         <NuxtPage />
       </v-container>
     </v-main>

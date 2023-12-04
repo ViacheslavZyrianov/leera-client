@@ -118,7 +118,6 @@ async function onSubmit() {
   await postRegisterUser()
   await postLoginUser()
   await getUserMe()
-  $event('dialog:close', 'auth')
   isLoading.value = false
   isDisabled.value = false
 }
@@ -132,7 +131,9 @@ async function onSubmit() {
     <v-text-field
       v-model="form.email"
       :error-messages="generateFieldErrorMessages($v, 'registration-email')"
-      variant="outlined"
+      variant="solo-filled"
+      density="compact"
+      :flat="true"
       :placeholder="$t('auth.registration.email.placeholder')"
       prepend-inner-icon="mdi-email-outline"
       class="mb-2"
@@ -141,7 +142,9 @@ async function onSubmit() {
     <v-text-field
       v-model="form.username"
       :error-messages="generateFieldErrorMessages($v, 'registration-username')"
-      variant="outlined"
+      variant="solo-filled"
+      density="compact"
+      :flat="true"
       :placeholder="$t('auth.registration.username.placeholder')"
       prepend-inner-icon="mdi-account"
       class="mb-2"
@@ -149,7 +152,9 @@ async function onSubmit() {
     />
     <v-text-field
       v-model="form.password"
-      variant="outlined"
+      variant="solo-filled"
+      density="compact"
+      :flat="true"
       :error-messages="generateFieldErrorMessages($v, 'registration-password')"
       :placeholder="$t('auth.registration.password.placeholder')"
       prepend-inner-icon="mdi-key"
@@ -160,7 +165,9 @@ async function onSubmit() {
     />
     <v-text-field
       v-model="form.passwordConfirm"
-      variant="outlined"
+      variant="solo-filled"
+      density="compact"
+      :flat="true"
       :error-messages="generateFieldErrorMessages($v, 'registration-passwordConfirm')"
       :placeholder="$t('auth.registration.passwordConfirm.placeholder')"
       prepend-inner-icon="mdi-key"
