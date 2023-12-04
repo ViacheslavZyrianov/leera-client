@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import requestor from '@/composables/requestor'
 import { type UserMe } from '@/interfaces/user'
+import { type StoriesInterface } from '@/interfaces/story'
 
 export const useUserStore = defineStore('user', {
     state: () => {
@@ -25,6 +26,10 @@ export const useUserStore = defineStore('user', {
             const { data } = await requestor<UserMe>(`/user/me`)
             this.me = data
             this.isLoggedIn = true
+        },
+        async getUserMeStories(): Promise<StoriesInterface> {
+            const { data } = await requestor<StoriesInterface>(`/user/me/stories`)
+            return data
         },
         async getUser(uuid: string) {
             return await requestor(`/user/${uuid}`)
