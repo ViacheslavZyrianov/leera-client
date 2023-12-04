@@ -4,7 +4,20 @@ import { useUserStore } from '@/stores/user'
 const localePath = useLocalePath()
 const userStore = useUserStore()
 
-const tab = ref('')
+const links = [
+  {
+    label: 'profile.label',
+    to: '/profile'
+  },
+  {
+    label: 'profile.stories.label',
+    to: '/profile/stories'
+  },
+  {
+    label: 'profile.settings.label',
+    to: '/profile/settings'
+  }
+]
 
 function onClickLogout() {
   userStore.logout()
@@ -14,35 +27,25 @@ function onClickLogout() {
 <template>
   <v-row>
     <v-col cols="3">
-      <v-card
-        class="pa-0"
-        elevation="0"
+      <v-btn
+        :to="localePath('/profile/stories/create')"
+        :block="true"
+        color="success"
+      >
+        {{ $t('stories.create') }}
+      </v-btn>
+      <v-btn
+        v-for="({ label, to }) in links"
+        :key="`${label}-${to}`"
+        :to="localePath(to)"
+        :block="true"
         variant="text"
       >
-        <v-tabs
-          v-model="tab"
-          direction="vertical"
-          density="compact"
-        >
-          <v-tab
-            :to="localePath('/profile')"
-            class="text-button"
-          >
-            {{ $t('profile.label') }}
-          </v-tab>
-          <v-tab
-            :to="localePath('/profile/settings')"
-            class="text-button"
-          >
-            {{ $t('profile.settings.label') }}
-          </v-tab>
-        </v-tabs>
-      </v-card>
+        {{ $t(label) }}
+      </v-btn>
       <v-btn
         :block="true"
-        variant="outlined"
         color="error"
-        size="large"
         class="mt-4"
         @click="onClickLogout"
       >
