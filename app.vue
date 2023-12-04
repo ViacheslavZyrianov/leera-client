@@ -2,7 +2,7 @@
 import { useTheme } from 'vuetify'
 import { setPalette } from '@/composables/palette'
 import { useUserStore } from '@/stores/user'
-import checkIsLoggedIn from '@/composables/checkIsLoggedIn';
+import checkIsLoggedIn from '@/composables/checkIsLoggedIn'
 
 const userStore = useUserStore()
 
@@ -11,6 +11,11 @@ const theme = useTheme()
 
 if (!cookie_theme.value) cookie_theme.value = 'light'
 setPalette(theme)
+
+const dayjs = useDayjs()
+const cookie_locale = useCookie('i18n_redirected')
+const { defaultLocale } = useI18n()
+dayjs.locale(cookie_locale.value || defaultLocale)
 
 if (checkIsLoggedIn()) {
   await userStore.getUserMe()
