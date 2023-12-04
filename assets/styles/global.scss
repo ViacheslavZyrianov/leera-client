@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-family: 'Yeseva One', sans-serif;
+  }
+}
+
 .v-field {
   font-size: 14px !important;
 
