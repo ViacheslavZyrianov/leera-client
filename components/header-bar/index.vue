@@ -9,6 +9,12 @@ const localePath = useLocalePath()
     elevation="0"
   >
     <v-container class="d-flex align-center justify-center">
+      <nuxt-link
+        :to="localePath('/')"
+        class="logo mr-4"
+      >
+        Leera
+      </nuxt-link>
       <v-btn
           v-for="{ to, label } in links"
           nuxt
@@ -26,6 +32,17 @@ const localePath = useLocalePath()
   </v-app-bar>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.logo {
+  font-family: 'Yeseva One', sans-serif;
+  color: $c--primary;
+  text-decoration: none;
+  font-size: 24px;
+  transition: color .3s;
+  will-change: color;
 
+  &:hover {
+    color: lighten($c--primary, 10%);
+  }
+}
 </style>
