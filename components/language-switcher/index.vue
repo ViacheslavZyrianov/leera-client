@@ -2,9 +2,11 @@
 const router = useRouter()
 const { locales, locale } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
+const dayjs = useDayjs()
 
 function onLocaleSelect(locale) {
   router.replace(switchLocalePath(locale))
+  dayjs.locale(locale)
 }
 </script>
 
