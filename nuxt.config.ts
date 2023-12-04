@@ -5,9 +5,13 @@ import build from './config/nuxtConfig/build'
 import vite from './config/nuxtConfig/build'
 
 export default defineNuxtConfig({
+    vite,
     devtools: { enabled: true },
     build,
     modules,
-    vite,
-    ...styles
+    ...styles,
+    dayjs: {
+        locales: ['en', 'uk'],
+        defaultLocale: 'en'
+    }
 })
