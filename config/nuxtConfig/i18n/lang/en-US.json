@@ -18,7 +18,23 @@
       }
     },
     "registration": {
-      "label": "Registration"
+      "label": "Registration",
+      "email": {
+        "label": "email",
+        "placeholder": "email"
+      },
+      "username": {
+        "label": "username",
+        "placeholder": "username"
+      },
+      "password": {
+        "label": "password",
+        "placeholder": "password"
+      },
+      "passwordConfirm": {
+        "label": "confirm password",
+        "placeholder": "confirm password"
+      }
     }
   },
   "headerBar": {
@@ -49,12 +65,16 @@
     }
   },
   "stories": {
+    "create": "Create story",
     "read": "Read",
+    "edit": "Edit",
     "free": "Free"
   },
   "errors": {
     "required": "Field {field} is required",
     "minLength": "Minimum {min} characters in field {field}",
-    "maxLength": "Maximum {max} characters in field {field}"
+    "maxLength": "Maximum {max} characters in field {field}",
+    "email": "Invalid email",
+    "sameAs": "{field} must match {fieldConfirm}"
   }
 }

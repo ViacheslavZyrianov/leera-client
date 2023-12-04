@@ -18,7 +18,23 @@
       }
     },
     "registration": {
-      "label": "Реєстрація"
+      "label": "Реєстрація",
+      "email": {
+        "label": "Електронна пошта",
+        "placeholder": "Електронна пошта"
+      },
+      "username": {
+        "label": "Юзернейм",
+        "placeholder": "Юзернейм"
+      },
+      "password": {
+        "label": "Пароль",
+        "placeholder": "Пароль"
+      },
+      "passwordConfirm": {
+        "label": "Підтвердження паролю",
+        "placeholder": "Підтвердження паролю"
+      }
     }
   },
   "headerBar": {
@@ -50,12 +66,16 @@
     }
   },
   "stories": {
+    "create": "Створити історію",
     "read": "Читати",
+    "edit": "Редагувати",
     "free": "Безкоштовно"
   },
   "errors": {
     "required": "Поле {field} обовʼязкове",
     "minLength": "Мінімум {min} літер в полі {field}",
-    "maxLength": "Maximum {max} літер в полі {field}"
+    "maxLength": "Максимум {max} літер в полі {field}",
+    "email": "Неправильний email",
+    "sameAs": "{field} має співпадати з {fieldConfirm}"
   }
 }

@@ -5,13 +5,13 @@ import { useVuelidate } from '@vuelidate/core'
 import { required, minLength, maxLength } from '@vuelidate/validators'
 import generateFieldErrorMessages from '@/composables/generateFieldErrorMessages'
 
-const { t } = useI18n()
+const { $event } = useNuxtApp()
 const authStore = useAuthStore()
 const userStore = useUserStore()
 
 const emit = defineEmits(['onSuccessfulLogin'])
 
-const isDisabled = ref(false)
+const isDisabled = ref(true)
 const isLoading = ref(false)
 const isPasswordFieldValueVisible = ref(false)
 
@@ -35,7 +35,7 @@ const rules = {
 
 const $v = useVuelidate(rules, form)
 
-watch(() => $v.value.$error, value => {
+watch(() => $v.value.$invalid, value => {
   isDisabled.value = value
 })
 
@@ -48,7 +48,7 @@ const passwordFieldType = computed(() => {
 })
 
 const submitButtonColor = computed(() => {
-  if (isDisabled.value) return 'primary'
+  if (!isDisabled.value) return 'primary'
 })
 
 function onPasswordFieldAppendedInnerIconClick() {
@@ -78,7 +78,7 @@ async function onSubmit() {
   isDisabled.value = true
   await postLoginUser()
   await getUserMe()
-  emit('onSuccessfulLogin')
+  $event('dialog:close', 'auth')
   isLoading.value = false
   isDisabled.value = false
 }
@@ -91,7 +91,7 @@ async function onSubmit() {
   >
     <v-text-field
       v-model="form.username"
-      :error-messages="generateFieldErrorMessages($v, 'username')"
+      :error-messages="generateFieldErrorMessages($v, 'login-username')"
       variant="outlined"
       :placeholder="$t('auth.login.username.placeholder')"
       prepend-inner-icon="mdi-account"
@@ -100,7 +100,7 @@ async function onSubmit() {
     <v-text-field
       v-model="form.password"
       variant="outlined"
-      :error-messages="generateFieldErrorMessages($v, 'password')"
+      :error-messages="generateFieldErrorMessages($v, 'login-password')"
       :placeholder="$t('auth.login.password.placeholder')"
       prepend-inner-icon="mdi-key"
       :append-inner-icon="passwordFieldAppendedInnerIcon"

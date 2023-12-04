@@ -14,6 +14,15 @@ export const useAuthStore = defineStore('auth', {
                     }
                 }
             )
+        },
+        async postRegister(body: any) {
+            return await requestor(
+                '/auth/register',
+                {
+                    method: 'POST',
+                    body,
+                }
+            )
         }
     },
 })
