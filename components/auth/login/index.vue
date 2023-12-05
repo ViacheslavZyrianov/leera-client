@@ -5,7 +5,6 @@ import { useVuelidate } from '@vuelidate/core'
 import { required, minLength, maxLength } from '@vuelidate/validators'
 import generateFieldErrorMessages from '@/composables/generateFieldErrorMessages'
 
-const { $event } = useNuxtApp()
 const authStore = useAuthStore()
 const userStore = useUserStore()
 const router = useRouter()
