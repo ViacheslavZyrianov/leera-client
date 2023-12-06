@@ -68,7 +68,31 @@
     "create": "Create story",
     "read": "Read",
     "edit": "Edit",
-    "free": "Free"
+    "free": "Free",
+    "title": {
+      "placeholder": "Title"
+    },
+    "description": {
+      "placeholder": "Short story description"
+    },
+    "tags": {
+      "placeholder": "Tags separated with comma",
+      "placeholder_maxLimitReached": "Reached limit of {num} tags"
+    },
+    "editor": {
+      "header": "Header {header}",
+      "regular": "Regular text"
+    }
+  },
+  "genres": {
+    "labelSingular": "Genre",
+    "labelPlural": "Genres",
+    "labelSelect": "Select genre",
+    "list": {
+      "comedy": "Comedy",
+      "drama": "Drama",
+      "thriller": "Thriller"
+    }
   },
   "search": {
     "placeholder": "Search story..."

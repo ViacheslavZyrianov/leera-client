@@ -69,7 +69,31 @@
     "create": "Створити історію",
     "read": "Читати",
     "edit": "Редагувати",
-    "free": "Безкоштовно"
+    "free": "Безкоштовно",
+    "title": {
+      "placeholder": "Назва"
+    },
+    "description": {
+      "placeholder": "Короткий опис історії"
+    },
+    "tags": {
+      "placeholder": "Теги через кому",
+      "placeholder_maxLimitReached": "Досягнуто ліміту в {num} тегів"
+    },
+    "editor": {
+      "header": "Заголовок {header}",
+      "regular": "Звичайний текст"
+    }
+  },
+  "genres": {
+    "labelSingular": "Жанр",
+    "labelPlural": "Жанри",
+    "labelSelect": "Оберіть жанр",
+    "list": {
+      "comedy": "Комедія",
+      "drama": "Драма",
+      "thriller": "Триллер"
+    }
   },
   "search": {
     "placeholder": "Шукати історію..."
