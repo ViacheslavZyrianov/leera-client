@@ -80,7 +80,10 @@
       "placeholder_maxLimitReached": "Reached limit of {num} tags"
     },
     "editor": {
-      "header": "Header {header}",
+      "header-1": "Header",
+      "header-2": "Subheader",
+      "header-3": "Subheader 1",
+      "header-4": "Subheader 2",
       "regular": "Regular text"
     }
   },

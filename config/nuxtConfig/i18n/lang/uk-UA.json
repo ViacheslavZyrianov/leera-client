@@ -81,7 +81,10 @@
       "placeholder_maxLimitReached": "Досягнуто ліміту в {num} тегів"
     },
     "editor": {
-      "header": "Заголовок {header}",
+      "header-1": "Заголовок",
+      "header-2": "Підзаголовок",
+      "header-3": "Підзаголовок 1",
+      "header-4": "Підзаголовок 2",
       "regular": "Звичайний текст"
     }
   },

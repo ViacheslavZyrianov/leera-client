@@ -3,14 +3,21 @@ defineProps({
   icon: {
     type: String,
     default: ''
+  },
+  isActive: {
+    type: Boolean,
+    default: false
   }
 })
 </script>
 
 <template>
   <v-btn
-    variant="tonal"
-    size="x-small"
+    variant="text"
+    size="small"
+    density="compact"
+    class="rounded-0"
+    :active="isActive"
   >
     <v-icon
       :icon="icon"
