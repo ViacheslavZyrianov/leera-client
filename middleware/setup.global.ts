@@ -6,7 +6,8 @@ export default defineNuxtRouteMiddleware((to) => {
     const isGuest = jwt?.value && uuid?.value
 
     const allowedGuestRoutes = [
-        '/auth',
+        '/login',
+        '/registration',
         '/stories'
     ]
 

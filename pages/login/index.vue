@@ -86,44 +86,62 @@ async function onSubmit() {
 </script>
 
 <template>
-  <v-form
-    class="pa-4"
-    @submit.prevent="onSubmit"
-  >
-    <v-text-field
-      v-model="form.username"
-      :error-messages="generateFieldErrorMessages($v, 'login-username')"
-      variant="solo-filled"
-      density="compact"
-      :flat="true"
-      :placeholder="$t('login.username.placeholder')"
-      prepend-inner-icon="mdi-account"
-      class="mb-2"
-    />
-    <v-text-field
-      v-model="form.password"
-      variant="solo-filled"
-      density="compact"
-      :flat="true"
-      :error-messages="generateFieldErrorMessages($v, 'login-password')"
-      :placeholder="$t('login.password.placeholder')"
-      prepend-inner-icon="mdi-key"
-      :append-inner-icon="passwordFieldAppendedInnerIcon"
-      :type="passwordFieldType"
-      class="mb-2"
-      @click:append-inner="onPasswordFieldAppendedInnerIconClick"
-    />
-    <v-btn
-      type="submit"
-      :loading="isLoading"
-      :disabled="isDisabled"
-      :block="true"
-      :flat="true"
-      :color="submitButtonColor"
-    >
-      {{ $t('login.label') }}
-    </v-btn>
-  </v-form>
+  <NuxtLayout name="auth">
+    <template #illustration>
+      <img
+        src="@/assets/img/login.svg"
+        alt="Login"
+      >
+      <v-btn
+        :to="localePath('/registration')"
+        variant="tonal"
+        color="primary"
+        class="mx-auto w-50"
+      >
+        {{ $t('registration.label') }}
+      </v-btn>
+    </template>
+    <template #form>
+      <h1 class="mt-n8 mb-4">{{ $t('login.label') }}</h1>
+      <v-form
+        @submit.prevent="onSubmit"
+      >
+        <v-text-field
+          v-model="form.username"
+          :error-messages="generateFieldErrorMessages($v, 'login-username')"
+          variant="solo-filled"
+          density="compact"
+          :flat="true"
+          :placeholder="$t('login.username.placeholder')"
+          prepend-inner-icon="mdi-account"
+          class="mb-2"
+        />
+        <v-text-field
+          v-model="form.password"
+          variant="solo-filled"
+          density="compact"
+          :flat="true"
+          :error-messages="generateFieldErrorMessages($v, 'login-password')"
+          :placeholder="$t('login.password.placeholder')"
+          prepend-inner-icon="mdi-key"
+          :append-inner-icon="passwordFieldAppendedInnerIcon"
+          :type="passwordFieldType"
+          class="mb-2"
+          @click:append-inner="onPasswordFieldAppendedInnerIconClick"
+        />
+        <v-btn
+          type="submit"
+          :loading="isLoading"
+          :disabled="isDisabled"
+          :block="true"
+          :flat="true"
+          :color="submitButtonColor"
+        >
+          {{ $t('login.label') }}
+        </v-btn>
+      </v-form>
+    </template>
+  </NuxtLayout>
 </template>
 
 <style scoped>

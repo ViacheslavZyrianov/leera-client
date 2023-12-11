@@ -4,6 +4,7 @@ import { useUserStore } from '@/stores/user'
 import { useVuelidate } from '@vuelidate/core'
 import { required, minLength, maxLength, email, sameAs } from '@vuelidate/validators'
 import generateFieldErrorMessages from '@/composables/generateFieldErrorMessages'
+const localePath = useLocalePath()
 
 const { $event } = useNuxtApp()
 const authStore = useAuthStore()
@@ -124,69 +125,87 @@ async function onSubmit() {
 </script>
 
 <template>
-  <v-form
-    class="pa-4"
-    @submit.prevent="onSubmit"
-  >
-    <v-text-field
-      v-model="form.email"
-      :error-messages="generateFieldErrorMessages($v, 'registration-email')"
-      variant="solo-filled"
-      density="compact"
-      :flat="true"
-      :placeholder="$t('registration.email.placeholder')"
-      prepend-inner-icon="mdi-email-outline"
-      class="mb-2"
-      @blur="onBlurValidateField('email')"
-    />
-    <v-text-field
-      v-model="form.username"
-      :error-messages="generateFieldErrorMessages($v, 'registration-username')"
-      variant="solo-filled"
-      density="compact"
-      :flat="true"
-      :placeholder="$t('registration.username.placeholder')"
-      prepend-inner-icon="mdi-account"
-      class="mb-2"
-      @blur="onBlurValidateField('username')"
-    />
-    <v-text-field
-      v-model="form.password"
-      variant="solo-filled"
-      density="compact"
-      :flat="true"
-      :error-messages="generateFieldErrorMessages($v, 'registration-password')"
-      :placeholder="$t('registration.password.placeholder')"
-      prepend-inner-icon="mdi-key"
-      :append-inner-icon="passwordFieldAppendedInnerIcon"
-      :type="passwordFieldType"
-      class="mb-2"
-      @click:append-inner="onPasswordFieldAppendedInnerIconClick"
-    />
-    <v-text-field
-      v-model="form.passwordConfirm"
-      variant="solo-filled"
-      density="compact"
-      :flat="true"
-      :error-messages="generateFieldErrorMessages($v, 'registration-passwordConfirm')"
-      :placeholder="$t('registration.passwordConfirm.placeholder')"
-      prepend-inner-icon="mdi-key"
-      :append-inner-icon="passwordConfirmFieldAppendedInnerIcon"
-      :type="passwordConfirmFieldType"
-      class="mb-2"
-      @blur="onBlurValidateField('passwordConfirm')"
-      @click:append-inner="onPasswordConfirmFieldAppendedInnerIconClick"
-    />
-    <v-btn
-      type="submit"
-      :loading="isLoading"
-      :disabled="isDisabled"
-      :block="true"
-      :color="submitButtonColor"
-    >
-      {{ $t('registration.label') }}
-    </v-btn>
-  </v-form>
+  <NuxtLayout name="auth">
+    <template #illustration>
+      <img
+        src="@/assets/img/registration.svg"
+        alt="Registration"
+      >
+      <v-btn
+        :to="localePath('/login')"
+        variant="tonal"
+        color="primary"
+        class="mx-auto w-50"
+      >
+        {{ $t('login.label') }}
+      </v-btn>
+    </template>
+    <template #form>
+      <h1 class="mt-n8 mb-4">{{ $t('registration.label') }}</h1>
+      <v-form
+        @submit.prevent="onSubmit"
+      >
+        <v-text-field
+            v-model="form.email"
+            :error-messages="generateFieldErrorMessages($v, 'registration-email')"
+            variant="solo-filled"
+            density="compact"
+            :flat="true"
+            :placeholder="$t('registration.email.placeholder')"
+            prepend-inner-icon="mdi-email-outline"
+            class="mb-2"
+            @blur="onBlurValidateField('email')"
+        />
+        <v-text-field
+            v-model="form.username"
+            :error-messages="generateFieldErrorMessages($v, 'registration-username')"
+            variant="solo-filled"
+            density="compact"
+            :flat="true"
+            :placeholder="$t('registration.username.placeholder')"
+            prepend-inner-icon="mdi-account"
+            class="mb-2"
+            @blur="onBlurValidateField('username')"
+        />
+        <v-text-field
+            v-model="form.password"
+            variant="solo-filled"
+            density="compact"
+            :flat="true"
+            :error-messages="generateFieldErrorMessages($v, 'registration-password')"
+            :placeholder="$t('registration.password.placeholder')"
+            prepend-inner-icon="mdi-key"
+            :append-inner-icon="passwordFieldAppendedInnerIcon"
+            :type="passwordFieldType"
+            class="mb-2"
+            @click:append-inner="onPasswordFieldAppendedInnerIconClick"
+        />
+        <v-text-field
+            v-model="form.passwordConfirm"
+            variant="solo-filled"
+            density="compact"
+            :flat="true"
+            :error-messages="generateFieldErrorMessages($v, 'registration-passwordConfirm')"
+            :placeholder="$t('registration.passwordConfirm.placeholder')"
+            prepend-inner-icon="mdi-key"
+            :append-inner-icon="passwordConfirmFieldAppendedInnerIcon"
+            :type="passwordConfirmFieldType"
+            class="mb-2"
+            @blur="onBlurValidateField('passwordConfirm')"
+            @click:append-inner="onPasswordConfirmFieldAppendedInnerIconClick"
+        />
+        <v-btn
+            type="submit"
+            :loading="isLoading"
+            :disabled="isDisabled"
+            :block="true"
+            :color="submitButtonColor"
+        >
+          {{ $t('registration.label') }}
+        </v-btn>
+      </v-form>
+    </template>
+  </NuxtLayout>
 </template>
 
 <style scoped>

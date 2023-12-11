@@ -18,7 +18,10 @@ const cookie_locale = useCookie('i18n_redirected')
 const { defaultLocale } = useI18n()
 dayjs.locale(cookie_locale.value || defaultLocale)
 
-const centeredPages = ['/auth']
+const centeredPages = [
+  '/login',
+  '/registration'
+]
 
 const classes = computed(() => centeredPages.includes(route.path) ? 'fill-height justify-center' : null)
 

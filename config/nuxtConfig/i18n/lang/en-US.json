@@ -4,37 +4,34 @@
     "submit": "Submit",
     "save": "Save"
   },
-  "auth": {
-    "label": "Authorization",
-    "login": {
-      "label": "Login",
-      "username": {
-        "label": "username",
-        "placeholder": "username"
-      },
-      "password": {
-        "label": "password",
-        "placeholder": "password"
-      }
+  "login": {
+    "label": "Login",
+    "username": {
+      "label": "username",
+      "placeholder": "username"
     },
-    "registration": {
-      "label": "Registration",
-      "email": {
-        "label": "email",
-        "placeholder": "email"
-      },
-      "username": {
-        "label": "username",
-        "placeholder": "username"
-      },
-      "password": {
-        "label": "password",
-        "placeholder": "password"
-      },
-      "passwordConfirm": {
-        "label": "confirm password",
-        "placeholder": "confirm password"
-      }
+    "password": {
+      "label": "password",
+      "placeholder": "password"
+    }
+  },
+  "registration": {
+    "label": "Registration",
+    "email": {
+      "label": "email",
+      "placeholder": "email"
+    },
+    "username": {
+      "label": "username",
+      "placeholder": "username"
+    },
+    "password": {
+      "label": "password",
+      "placeholder": "password"
+    },
+    "passwordConfirm": {
+      "label": "confirm password",
+      "placeholder": "confirm password"
     }
   },
   "headerBar": {
