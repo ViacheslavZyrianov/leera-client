@@ -11,7 +11,7 @@ export default ($v: any, field: string) => {
 
         const paramsKey = Object.keys($params).filter((key:string) => key !== 'type')[0]
 
-        const errorText = t(`auth.${moduleName}.${fieldName}.label`)
+        const errorText = t(`${moduleName}.${fieldName}.label`)
 
         const interpolatedObj = {
             field: errorText,
@@ -21,7 +21,7 @@ export default ($v: any, field: string) => {
         if ($validator.includes('sameAs')) {
             validator = $validator.split('__')[0]
             const sameAs = $validator.split('__')[1]
-            interpolatedObj.fieldConfirm = t(`auth.${moduleName}.${sameAs}.label`)
+            interpolatedObj.fieldConfirm = t(`${moduleName}.${sameAs}.label`)
         }
 
         return t(`errors.${validator}`, interpolatedObj)
