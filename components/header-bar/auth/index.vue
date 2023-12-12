@@ -30,10 +30,3 @@ const localePath = useLocalePath()
     </v-btn>
   </template>
 </template>
-
-<style scoped>
-.avatar-initial {
-  font-family: 'Yeseva One', sans-serif;
-  font-size: 20px;
-}
-</style>
