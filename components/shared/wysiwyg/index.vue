@@ -199,7 +199,7 @@ const editorBtnList = [
 ]
 
 const editor = useEditor({
-  content: 'akwd ajdiwo jawdoaiwdj wai d',
+  content: '',
   extensions: [
     StarterKit,
     Document,
