@@ -79,7 +79,7 @@ const submitButtonColor = computed(() => {
 })
 
 const tagsFieldPlaceholder = computed(() => {
-  return isMaxTagsLimitReached ?
+  return isMaxTagsLimitReached.value ?
       t('stories.tags.placeholder_maxLimitReached', { num: maxTagsLimit }) :
       t('stories.tags.placeholder')
 })
