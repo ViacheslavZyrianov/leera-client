@@ -71,12 +71,14 @@
     "edit": "Редагувати",
     "free": "Безкоштовно",
     "title": {
+      "title": "Назва",
       "placeholder": "Назва"
     },
     "description": {
       "placeholder": "Короткий опис історії"
     },
     "tags": {
+      "label": "Теги",
       "placeholder": "Теги через кому",
       "placeholder_maxLimitReached": "Досягнуто ліміту в {num} тегів"
     },
@@ -86,6 +88,16 @@
       "header-3": "Підзаголовок 1",
       "header-4": "Підзаголовок 2",
       "regular": "Звичайний текст"
+    },
+    "text": {
+      "label": "Текст"
+    },
+    "price": {
+      "label": "Ціна",
+      "placeholder": "Безкоштовно"
+    },
+    "isAccessible": {
+      "label": "Доступність історії для інших користувачів"
     }
   },
   "genres": {
@@ -106,6 +118,9 @@
     "minLength": "Мінімум {min} літер в полі {field}",
     "maxLength": "Максимум {max} літер в полі {field}",
     "email": "Неправильний email",
+    "numeric": "{field} мєа бути числом",
+    "minValue": "Мінімальне значення поля {field} від {min}",
+    "maxValue": "Максимальне значення поля {field} до {max}",
     "sameAs": "{field} має співпадати з {fieldConfirm}"
   }
 }

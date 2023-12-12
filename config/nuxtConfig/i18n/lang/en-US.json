@@ -67,12 +67,14 @@
     "edit": "Edit",
     "free": "Free",
     "title": {
+      "label": "Title",
       "placeholder": "Title"
     },
     "description": {
       "placeholder": "Short story description"
     },
     "tags": {
+      "label": "Tags",
       "placeholder": "Tags separated with comma",
       "placeholder_maxLimitReached": "Reached limit of {num} tags"
     },
@@ -82,6 +84,16 @@
       "header-3": "Subheader 1",
       "header-4": "Subheader 2",
       "regular": "Regular text"
+    },
+    "text": {
+      "label": "Text"
+    },
+    "price": {
+      "label": "Price",
+      "placeholder": "Free"
+    },
+    "isAccessible": {
+      "label": "Is story accessible for other users"
     }
   },
   "genres": {
@@ -102,6 +114,9 @@
     "minLength": "Minimum {min} characters in field {field}",
     "maxLength": "Maximum {max} characters in field {field}",
     "email": "Invalid email",
+    "numeric": "{field} must be a number",
+    "minValue": "Min value of {field} is {min}",
+    "maxValue": "Max value of {field} is {max}",
     "sameAs": "{field} must match {fieldConfirm}"
   }
 }
