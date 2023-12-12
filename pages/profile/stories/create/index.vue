@@ -72,14 +72,14 @@ watch(() => tags.value, val => {
   }
 })
 
-const ismaxTagsLimitReached = computed(() => maxTagsLimit === tagsAsChips.length)
+const isMaxTagsLimitReached = computed(() => maxTagsLimit === tagsAsChips.length)
 
 const submitButtonColor = computed(() => {
   if (!isDisabled.value) return 'primary'
 })
 
 const tagsFieldPlaceholder = computed(() => {
-  return ismaxTagsLimitReached ?
+  return isMaxTagsLimitReached ?
       t('stories.tags.placeholder_maxLimitReached', { num: maxTagsLimit }) :
       t('stories.tags.placeholder')
 })
@@ -145,7 +145,7 @@ async function onSubmit() {
       :placeholder="tagsFieldPlaceholder"
       :counter="maxTagsLimit"
       :counter-value="tagsAsChips.length"
-      :readonly="ismaxTagsLimitReached"
+      :readonly="isMaxTagsLimitReached"
       :persistent-counter="true"
       class="mb-2"
     >
