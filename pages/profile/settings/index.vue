@@ -1,17 +1,14 @@
 <script setup lang="ts">
-import { list as palettes, setPalette } from '@/composables/palette'
-import { useTheme } from 'vuetify'
-import type { CookieRef } from '#app'
+import { useSettingsStore } from '@/stores/settings'
+import usePalette from '@/composables/usePalette'
 
-const theme = useTheme()
-const cookie_palette: CookieRef<string | null | undefined> = useCookie('palette')
+const settingsStore = useSettingsStore()
+const changeVuetifyPalette = usePalette()
 
 function onPaletteSelect(palette: string):void {
-  cookie_palette.value = palette
-  setPalette(theme)
+  settingsStore.setPalette(palette)
+  changeVuetifyPalette()
 }
-
-setPalette(theme)
 </script>
 
 <template>
@@ -24,13 +21,13 @@ setPalette(theme)
               {{ $t(`profile.settings.list.palette.label`) }}
             </v-col>
             <v-col class="px-0 text-right text-button">
-              {{ $t(`profile.settings.list.palette.list.${cookie_palette}`) }}
+              {{ $t(`profile.settings.list.palette.list.${settingsStore.palette}`) }}
             </v-col>
           </v-row>
         </v-list-item>
 
         <v-list-item
-            v-for="(palette, paletteKey) in palettes"
+            v-for="(palette, paletteKey) in settingsStore.palettes"
             :key="paletteKey"
         >
           <v-row class="d-flex align-center">
@@ -38,18 +35,18 @@ setPalette(theme)
             <v-spacer />
             <v-col class="d-flex align-center justify-end">
               <v-sheet
-                v-for="(color, colorKey) in palette"
-                :key="colorKey"
-                :width="24"
-                :height="24"
-                :color="color"
-                class="ml-2"
+                  v-for="(color, colorKey) in palette"
+                  :key="colorKey"
+                  :width="24"
+                  :height="24"
+                  :color="color"
+                  class="ml-2"
               />
               <v-btn
-                color="primary"
-                class="ml-4"
-                :active="paletteKey === cookie_palette"
-                @click="onPaletteSelect(paletteKey)"
+                  color="primary"
+                  class="ml-4"
+                  :active="paletteKey === settingsStore.palette"
+                  @click="onPaletteSelect(paletteKey)"
               >
                 {{ $t('general.select') }}
               </v-btn>
@@ -57,7 +54,7 @@ setPalette(theme)
           </v-row>
         </v-list-item>
       </v-list>
-    </v-card>
+  </v-card>
   </NuxtLayout>
 </template>
 

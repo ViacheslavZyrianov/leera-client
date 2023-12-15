@@ -1,17 +1,22 @@
 <script setup lang="ts">
-import { useTheme } from 'vuetify'
-import { setPalette } from '@/composables/palette'
 import { useUserStore } from '@/stores/user'
+import { useSettingsStore } from '@/stores/settings'
 import checkIsLoggedIn from '@/composables/checkIsLoggedIn'
+import usePalette from '@/composables/usePalette'
 
 const userStore = useUserStore()
+const settingsStore = useSettingsStore()
 const route = useRoute()
 
 const cookie_theme = useCookie('theme')
-const theme = useTheme()
 
 if (!cookie_theme.value) cookie_theme.value = 'light'
-setPalette(theme)
+
+if (process.client) {
+  const changeVuetifyPalette = usePalette()
+  settingsStore.setInitialPalette()
+  changeVuetifyPalette()
+}
 
 const dayjs = useDayjs()
 const cookie_locale = useCookie('i18n_redirected')
